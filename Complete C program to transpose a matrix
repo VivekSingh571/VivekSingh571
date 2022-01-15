@@ -1,0 +1,50 @@
+#include<stdio.h>
+void main()
+{
+int matrix[10][10], i, j, r, c, trans[10][10];
+clrscr();
+printf("\n Enter the number of rows in matrix: ");
+scanf("%d", &r);
+printf("\n Enter the number of columns inn matrix: ");
+scanf("%d, &c);
+for(i=1;i<r+1;i++)
+{
+  for(j=1;j<c+1;j++)
+  {
+    printf("\n Enter the element a%d%d : ",i,j);
+    scanf("%d",&matrix[i][j]);
+  }
+}
+printf("\n The entered matrix is as follows: ");
+for(i=1;i<r+1;i++)
+{
+  for(j=1;j<c+1;j++)
+  {
+    printf("\t %d", matrix[i][j]);
+    if(j==c)
+    {
+      printf("\n");
+    }
+  }
+}
+for(i=1;i<c+1;i++)
+{
+  for(j=1;j<r+1;j++)
+  {
+    trans[i][j]=matrix[j][i];
+  }
+}
+printf("\n The transposed matrix is as follows: ");
+for(i=1;i<c+1;i++)
+{
+  for(j=1;j<r+1;j++)
+  {
+    printf("\t %d", trans[i][j]);
+    if(j==r)
+    {
+      printf("\n");
+    }
+  }
+}
+getch();
+}
